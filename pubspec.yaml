@@ -16,6 +16,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_translate: ^4.0.3
   graphql: ^5.1.1
+  bloc: ^8.0.3
+  flutter_bloc: ^8.0.1
+
 
 dev_dependencies:
   flutter_test:
