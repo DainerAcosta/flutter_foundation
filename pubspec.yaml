@@ -18,7 +18,10 @@ dependencies:
   graphql: ^5.1.1
   bloc: ^8.0.3
   flutter_bloc: ^8.0.1
-
+  hydrated_bloc: ^8.1.0
+  formz: ^0.4.1
+  equatable: ^2.0.3
+  path_provider: ^2.0.11
 
 dev_dependencies:
   flutter_test:
