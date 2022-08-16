@@ -29,16 +29,8 @@ class AuthBloc extends HydratedBloc<AuthEvent, AuthState> {
       emit(state.copyWith(status: state.status));
 
   @override
-  AuthState? fromJson(Map<String, dynamic> json) {
-    try {
-      return AuthState.fromJson(json);
-    } catch (_) {
-      return null;
-    }
-  }
+  AuthState? fromJson(Map<String, dynamic> json) => AuthState.fromJson(json);
 
   @override
-  Map<String, dynamic>? toJson(AuthState state) {
-    return state.toJson();
-  }
+  Map<String, dynamic>? toJson(AuthState state) => state.toJson();
 }

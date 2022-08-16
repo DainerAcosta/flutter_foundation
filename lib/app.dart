@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -7,6 +5,7 @@ import 'package:flutter_template/src/app/auth/auth.dart';
 import 'package:flutter_template/src/app/common/theme/theme.dart';
 import 'package:flutter_template/src/app/home/home.dart';
 import 'package:flutter_template/src/app/login/login.dart';
+import 'package:flutter_template/src/app/splash/view/splash_page.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 
 class App extends StatefulWidget {
@@ -24,7 +23,6 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     var localizationDelegate = LocalizedApp.of(context).delegate;
-    log(context.read<AuthBloc>().state.status.toString());
     return LocalizationProvider(
       state: LocalizationProvider.of(context).state,
       child: MaterialApp(
@@ -62,7 +60,7 @@ class _AppState extends State<App> {
         locale: localizationDelegate.currentLocale,
         theme: FlutterAppTheme.light,
         darkTheme: FlutterAppTheme.dark,
-        onGenerateRoute: (_) => LoginPage.route(),
+        onGenerateRoute: (_) => SplashPage.route(),
       ),
     );
   }

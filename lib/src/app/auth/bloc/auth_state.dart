@@ -10,10 +10,10 @@ class AuthState extends Equatable {
   });
 
   factory AuthState.fromJson(Map<String, dynamic> json) =>
-      AuthState(status: json["status"] as AuthStatus);
+      AuthState(status: AuthStatus.values.byName(json["status"]));
 
   Map<String, dynamic> toJson() => {
-        "status": status.toString(),
+        "status": status.name,
       };
 
   AuthState copyWith({AuthStatus? status}) {
