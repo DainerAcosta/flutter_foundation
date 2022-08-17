@@ -3,9 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_template/src/app/auth/auth.dart';
 import 'package:flutter_template/src/app/common/theme/theme.dart';
-import 'package:flutter_template/src/app/home/home.dart';
-import 'package:flutter_template/src/app/login/login.dart';
 import 'package:flutter_template/src/app/routes/pages.dart';
+import 'package:flutter_template/src/app/routes/routes.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 
 class App extends StatefulWidget {
@@ -32,16 +31,10 @@ class _AppState extends State<App> {
             listener: (context, state) {
               switch (state.status) {
                 case AuthStatus.authenticated:
-                  _navigator.pushAndRemoveUntil<void>(
-                    HomePage.route(),
-                    (route) => false,
-                  );
+                  _navigator.pushNamedAndRemoveUntil(Routes.home, (route) => false,);
                   break;
                 case AuthStatus.unauthenticated:
-                  _navigator.pushAndRemoveUntil<void>(
-                    LoginPage.route(),
-                    (route) => false,
-                  );
+                  _navigator.pushNamedAndRemoveUntil(Routes.signIn, (route) => false,);
                   break;
                 case AuthStatus.unknown:
                   break;
