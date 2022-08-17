@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
                 final status = context.select(
                   (AuthBloc bloc) => bloc.state.status,
                 );
-                return Text('UserID: $status');
+                return Text('Status: ${status.name}');
               },
             ),
             ElevatedButton(

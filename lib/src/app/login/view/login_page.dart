@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_template/src/app/auth/auth.dart';
 import 'package:flutter_template/src/app/login/bloc/login_bloc.dart';
 import 'package:flutter_template/src/app/login/view/login_form.dart';
-import 'package:flutter_template/src/data/repositories_impl/auth_repository_impl.dart';
+import 'package:flutter_template/src/data/repositories_impl/auth_repository_http_impl.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -21,7 +21,7 @@ class LoginPage extends StatelessWidget {
         child: BlocProvider(
           create: (context) {
             return LoginBloc(
-              authRepository: authRepositoryImpl,
+              authRepository: authRepositoryHttpImpl,
               authBloc: context.read<AuthBloc>(),
             );
           },

@@ -5,7 +5,7 @@ import 'package:flutter_template/src/app/auth/auth.dart';
 import 'package:flutter_template/src/app/common/theme/theme.dart';
 import 'package:flutter_template/src/app/home/home.dart';
 import 'package:flutter_template/src/app/login/login.dart';
-import 'package:flutter_template/src/app/splash/view/splash_page.dart';
+import 'package:flutter_template/src/app/routes/pages.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 
 class App extends StatefulWidget {
@@ -60,7 +60,8 @@ class _AppState extends State<App> {
         locale: localizationDelegate.currentLocale,
         theme: FlutterAppTheme.light,
         darkTheme: FlutterAppTheme.dark,
-        onGenerateRoute: (_) => SplashPage.route(),
+        initialRoute: Pages.initial,
+        routes: Pages.routes,
       ),
     );
   }
